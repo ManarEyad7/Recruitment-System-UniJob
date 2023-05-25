@@ -5,14 +5,13 @@ app = Flask(__name__)
 
 
 @app.route('/', methods=['GET' , 'POST'])
-def login(): 
+def index(): 
     if request.method == 'POST':
 
         connection = sqlite3.connect('users.db')
         cursor = connection.cursor()
 
-    return render_template('login.html')
-
+    return render_template('index.html')
 
 
 if __name__ == '__main__':
